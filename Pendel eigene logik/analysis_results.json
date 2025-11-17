@@ -1,0 +1,1348 @@
+{
+  "video_info": {
+    "video_path": "D:\\Carl-August Stendel\\UNI\\5. Semester\\MAT\\Pendel eigene logik\\Video\\20251117_152251_1.mp4",
+    "fps": 29.939395992705855,
+    "used_recorded_fps": 240.0,
+    "total_frames": 34857,
+    "duration_seconds": 1164.2519444444445,
+    "frame_dimensions": [
+      286,
+      282
+    ]
+  },
+  "analysis_results": [
+    {
+      "frame_number": 0,
+      "time_seconds": 0.0,
+      "background_intensity": 219.64549365942028,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.359779373706
+    },
+    {
+      "frame_number": 1,
+      "time_seconds": 0.004166666666666667,
+      "background_intensity": 219.63606770833334,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.35035342261907,
+      "time_difference_to_previous": 0.004166666666666667
+    },
+    {
+      "frame_number": 2,
+      "time_seconds": 0.008333333333333333,
+      "background_intensity": 219.62774569746378,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.3420314117495,
+      "time_difference_to_previous": 0.004166666666666667
+    },
+    {
+      "frame_number": 3,
+      "time_seconds": 0.0125,
+      "background_intensity": 219.61574388586956,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.33002960015529,
+      "time_difference_to_previous": 0.0041666666666666675
+    },
+    {
+      "frame_number": 4,
+      "time_seconds": 0.016666666666666666,
+      "background_intensity": 219.62935914855072,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.34364486283644
+    },
+    {
+      "frame_number": 5,
+      "time_seconds": 0.020833333333333332,
+      "background_intensity": 219.62508491847825,
+      "dark_intensity": 56.357142857142854,
+      "intensity_difference": 163.2679420613354,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 6,
+      "time_seconds": 0.025,
+      "background_intensity": 219.6341995018116,
+      "dark_intensity": 55.75,
+      "intensity_difference": 163.8841995018116,
+      "time_difference_to_previous": 0.004166666666666669
+    },
+    {
+      "frame_number": 7,
+      "time_seconds": 0.029166666666666667,
+      "background_intensity": 219.63368999094203,
+      "dark_intensity": 55.92857142857143,
+      "intensity_difference": 163.70511856237061
+    },
+    {
+      "frame_number": 8,
+      "time_seconds": 0.03333333333333333,
+      "background_intensity": 219.63402966485506,
+      "dark_intensity": 55.892857142857146,
+      "intensity_difference": 163.74117252199792,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 9,
+      "time_seconds": 0.0375,
+      "background_intensity": 219.62129189311594,
+      "dark_intensity": 55.892857142857146,
+      "intensity_difference": 163.7284347502588
+    },
+    {
+      "frame_number": 10,
+      "time_seconds": 0.041666666666666664,
+      "background_intensity": 219.64603147644928,
+      "dark_intensity": 56.0,
+      "intensity_difference": 163.64603147644928,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 11,
+      "time_seconds": 0.04583333333333333,
+      "background_intensity": 219.64322916666666,
+      "dark_intensity": 54.714285714285715,
+      "intensity_difference": 164.92894345238093
+    },
+    {
+      "frame_number": 12,
+      "time_seconds": 0.05,
+      "background_intensity": 219.64028532608697,
+      "dark_intensity": 55.25,
+      "intensity_difference": 164.39028532608697,
+      "time_difference_to_previous": 0.008333333333333338
+    },
+    {
+      "frame_number": 13,
+      "time_seconds": 0.05416666666666667,
+      "background_intensity": 219.63861526268116,
+      "dark_intensity": 55.25,
+      "intensity_difference": 164.38861526268116
+    },
+    {
+      "frame_number": 14,
+      "time_seconds": 0.058333333333333334,
+      "background_intensity": 219.6589107789855,
+      "dark_intensity": 56.035714285714285,
+      "intensity_difference": 163.62319649327122,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 15,
+      "time_seconds": 0.0625,
+      "background_intensity": 219.65480638586956,
+      "dark_intensity": 56.035714285714285,
+      "intensity_difference": 163.61909210015529
+    },
+    {
+      "frame_number": 16,
+      "time_seconds": 0.06666666666666667,
+      "background_intensity": 219.66148663949275,
+      "dark_intensity": 54.642857142857146,
+      "intensity_difference": 165.0186294966356,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 17,
+      "time_seconds": 0.07083333333333333,
+      "background_intensity": 219.66261888586956,
+      "dark_intensity": 54.642857142857146,
+      "intensity_difference": 165.01976174301242
+    },
+    {
+      "frame_number": 18,
+      "time_seconds": 0.075,
+      "background_intensity": 219.67391304347825,
+      "dark_intensity": 52.464285714285715,
+      "intensity_difference": 167.20962732919253,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 19,
+      "time_seconds": 0.07916666666666666,
+      "background_intensity": 219.67558310688406,
+      "dark_intensity": 52.714285714285715,
+      "intensity_difference": 166.96129739259834
+    },
+    {
+      "frame_number": 20,
+      "time_seconds": 0.08333333333333333,
+      "background_intensity": 219.66482676630434,
+      "dark_intensity": 54.32142857142857,
+      "intensity_difference": 165.34339819487576,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 21,
+      "time_seconds": 0.0875,
+      "background_intensity": 219.6714504076087,
+      "dark_intensity": 54.785714285714285,
+      "intensity_difference": 164.8857361218944
+    },
+    {
+      "frame_number": 22,
+      "time_seconds": 0.09166666666666666,
+      "background_intensity": 219.74422554347825,
+      "dark_intensity": 54.75,
+      "intensity_difference": 164.99422554347825,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 23,
+      "time_seconds": 0.09583333333333334,
+      "background_intensity": 219.7557178442029,
+      "dark_intensity": 54.75,
+      "intensity_difference": 165.0057178442029,
+      "time_difference_to_previous": 0.00416666666666668
+    },
+    {
+      "frame_number": 24,
+      "time_seconds": 0.1,
+      "background_intensity": 219.70754076086956,
+      "dark_intensity": 55.214285714285715,
+      "intensity_difference": 164.49325504658384
+    },
+    {
+      "frame_number": 25,
+      "time_seconds": 0.10416666666666667,
+      "background_intensity": 219.71492866847825,
+      "dark_intensity": 55.214285714285715,
+      "intensity_difference": 164.50064295419253,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 26,
+      "time_seconds": 0.10833333333333334,
+      "background_intensity": 219.71634397644928,
+      "dark_intensity": 56.214285714285715,
+      "intensity_difference": 163.50205826216356
+    },
+    {
+      "frame_number": 27,
+      "time_seconds": 0.1125,
+      "background_intensity": 219.7056442481884,
+      "dark_intensity": 56.214285714285715,
+      "intensity_difference": 163.49135853390268,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 28,
+      "time_seconds": 0.11666666666666667,
+      "background_intensity": 219.67697010869566,
+      "dark_intensity": 55.82142857142857,
+      "intensity_difference": 163.85554153726707
+    },
+    {
+      "frame_number": 29,
+      "time_seconds": 0.12083333333333333,
+      "background_intensity": 219.6783288043478,
+      "dark_intensity": 55.82142857142857,
+      "intensity_difference": 163.85690023291926,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 30,
+      "time_seconds": 0.125,
+      "background_intensity": 219.64883378623188,
+      "dark_intensity": 55.25,
+      "intensity_difference": 164.39883378623188
+    },
+    {
+      "frame_number": 31,
+      "time_seconds": 0.12916666666666668,
+      "background_intensity": 219.64039855072463,
+      "dark_intensity": 55.25,
+      "intensity_difference": 164.39039855072463,
+      "time_difference_to_previous": 0.008333333333333345
+    },
+    {
+      "frame_number": 32,
+      "time_seconds": 0.13333333333333333,
+      "background_intensity": 219.5982223731884,
+      "dark_intensity": 55.17857142857143,
+      "intensity_difference": 164.419650944617
+    },
+    {
+      "frame_number": 33,
+      "time_seconds": 0.1375,
+      "background_intensity": 219.60334578804347,
+      "dark_intensity": 55.142857142857146,
+      "intensity_difference": 164.46048864518633,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 34,
+      "time_seconds": 0.14166666666666666,
+      "background_intensity": 219.5970618206522,
+      "dark_intensity": 53.17857142857143,
+      "intensity_difference": 166.41849039208074
+    },
+    {
+      "frame_number": 35,
+      "time_seconds": 0.14583333333333334,
+      "background_intensity": 219.60498754528984,
+      "dark_intensity": 53.357142857142854,
+      "intensity_difference": 166.24784468814698,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 36,
+      "time_seconds": 0.15,
+      "background_intensity": 219.61990489130434,
+      "dark_intensity": 56.07142857142857,
+      "intensity_difference": 163.54847631987576
+    },
+    {
+      "frame_number": 37,
+      "time_seconds": 0.15416666666666667,
+      "background_intensity": 219.6113564311594,
+      "dark_intensity": 56.17857142857143,
+      "intensity_difference": 163.432785002588,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 38,
+      "time_seconds": 0.15833333333333333,
+      "background_intensity": 219.6029211956522,
+      "dark_intensity": 55.214285714285715,
+      "intensity_difference": 164.38863548136646
+    },
+    {
+      "frame_number": 39,
+      "time_seconds": 0.1625,
+      "background_intensity": 219.58038949275362,
+      "dark_intensity": 55.07142857142857,
+      "intensity_difference": 164.50896092132507,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 40,
+      "time_seconds": 0.16666666666666666,
+      "background_intensity": 219.5879189311594,
+      "dark_intensity": 58.035714285714285,
+      "intensity_difference": 161.55220464544513
+    },
+    {
+      "frame_number": 41,
+      "time_seconds": 0.17083333333333334,
+      "background_intensity": 219.59273097826087,
+      "dark_intensity": 57.964285714285715,
+      "intensity_difference": 161.62844526397515,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 42,
+      "time_seconds": 0.175,
+      "background_intensity": 219.5694633152174,
+      "dark_intensity": 56.32142857142857,
+      "intensity_difference": 163.24803474378882
+    },
+    {
+      "frame_number": 43,
+      "time_seconds": 0.17916666666666667,
+      "background_intensity": 219.5808990036232,
+      "dark_intensity": 56.285714285714285,
+      "intensity_difference": 163.2951847179089,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 44,
+      "time_seconds": 0.18333333333333332,
+      "background_intensity": 219.58984375,
+      "dark_intensity": 56.17857142857143,
+      "intensity_difference": 163.41127232142856
+    },
+    {
+      "frame_number": 45,
+      "time_seconds": 0.1875,
+      "background_intensity": 219.59145720108697,
+      "dark_intensity": 55.42857142857143,
+      "intensity_difference": 164.16288577251555,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 46,
+      "time_seconds": 0.19166666666666668,
+      "background_intensity": 219.55952785326087,
+      "dark_intensity": 54.964285714285715,
+      "intensity_difference": 164.59524213897515,
+      "time_difference_to_previous": 0.00416666666666668
+    },
+    {
+      "frame_number": 47,
+      "time_seconds": 0.19583333333333333,
+      "background_intensity": 219.55910326086956,
+      "dark_intensity": 54.75,
+      "intensity_difference": 164.80910326086956
+    },
+    {
+      "frame_number": 48,
+      "time_seconds": 0.2,
+      "background_intensity": 219.57653985507247,
+      "dark_intensity": 56.857142857142854,
+      "intensity_difference": 162.7193969979296,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 49,
+      "time_seconds": 0.20416666666666666,
+      "background_intensity": 219.5721240942029,
+      "dark_intensity": 56.857142857142854,
+      "intensity_difference": 162.71498123706004
+    },
+    {
+      "frame_number": 50,
+      "time_seconds": 0.20833333333333334,
+      "background_intensity": 219.56691576086956,
+      "dark_intensity": 54.82142857142857,
+      "intensity_difference": 164.745487189441,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 51,
+      "time_seconds": 0.2125,
+      "background_intensity": 219.55964107789856,
+      "dark_intensity": 54.714285714285715,
+      "intensity_difference": 164.84535536361284
+    },
+    {
+      "frame_number": 52,
+      "time_seconds": 0.21666666666666667,
+      "background_intensity": 219.5647361865942,
+      "dark_intensity": 56.892857142857146,
+      "intensity_difference": 162.67187904373705,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 53,
+      "time_seconds": 0.22083333333333333,
+      "background_intensity": 219.5598675271739,
+      "dark_intensity": 56.392857142857146,
+      "intensity_difference": 163.16701038431677
+    },
+    {
+      "frame_number": 54,
+      "time_seconds": 0.225,
+      "background_intensity": 219.5545459692029,
+      "dark_intensity": 55.785714285714285,
+      "intensity_difference": 163.76883168348863,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 55,
+      "time_seconds": 0.22916666666666666,
+      "background_intensity": 219.5608299365942,
+      "dark_intensity": 55.42857142857143,
+      "intensity_difference": 164.13225850802274
+    },
+    {
+      "frame_number": 56,
+      "time_seconds": 0.23333333333333334,
+      "background_intensity": 219.57653985507247,
+      "dark_intensity": 55.214285714285715,
+      "intensity_difference": 164.36225414078675,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 57,
+      "time_seconds": 0.2375,
+      "background_intensity": 219.56901041666666,
+      "dark_intensity": 56.464285714285715,
+      "intensity_difference": 163.10472470238093
+    },
+    {
+      "frame_number": 58,
+      "time_seconds": 0.24166666666666667,
+      "background_intensity": 219.54274230072463,
+      "dark_intensity": 56.75,
+      "intensity_difference": 162.79274230072463,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 59,
+      "time_seconds": 0.24583333333333332,
+      "background_intensity": 219.53951539855072,
+      "dark_intensity": 56.535714285714285,
+      "intensity_difference": 163.00380111283644
+    },
+    {
+      "frame_number": 60,
+      "time_seconds": 0.25,
+      "background_intensity": 219.53880774456522,
+      "dark_intensity": 54.17857142857143,
+      "intensity_difference": 165.3602363159938,
+      "time_difference_to_previous": 0.008333333333333331
+    },
+    {
+      "frame_number": 61,
+      "time_seconds": 0.25416666666666665,
+      "background_intensity": 219.51667232789856,
+      "dark_intensity": 54.67857142857143,
+      "intensity_difference": 164.83810089932712
+    },
+    {
+      "frame_number": 62,
+      "time_seconds": 0.25833333333333336,
+      "background_intensity": 219.4668251811594,
+      "dark_intensity": 55.964285714285715,
+      "intensity_difference": 163.50253946687369,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 63,
+      "time_seconds": 0.2625,
+      "background_intensity": 219.4562103713768,
+      "dark_intensity": 55.964285714285715,
+      "intensity_difference": 163.4919246570911
+    },
+    {
+      "frame_number": 64,
+      "time_seconds": 0.26666666666666666,
+      "background_intensity": 219.39756000905797,
+      "dark_intensity": 52.67857142857143,
+      "intensity_difference": 166.71898858048655,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 65,
+      "time_seconds": 0.2708333333333333,
+      "background_intensity": 219.40494791666666,
+      "dark_intensity": 52.714285714285715,
+      "intensity_difference": 166.69066220238093
+    },
+    {
+      "frame_number": 66,
+      "time_seconds": 0.275,
+      "background_intensity": 219.40353260869566,
+      "dark_intensity": 51.857142857142854,
+      "intensity_difference": 167.5463897515528,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 67,
+      "time_seconds": 0.2791666666666667,
+      "background_intensity": 219.4054291213768,
+      "dark_intensity": 50.857142857142854,
+      "intensity_difference": 168.54828626423395
+    },
+    {
+      "frame_number": 68,
+      "time_seconds": 0.2833333333333333,
+      "background_intensity": 219.39274796195653,
+      "dark_intensity": 50.0,
+      "intensity_difference": 169.39274796195653,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 69,
+      "time_seconds": 0.2875,
+      "background_intensity": 219.404834692029,
+      "dark_intensity": 50.035714285714285,
+      "intensity_difference": 169.36912040631472
+    },
+    {
+      "frame_number": 70,
+      "time_seconds": 0.2916666666666667,
+      "background_intensity": 219.40242866847825,
+      "dark_intensity": 49.964285714285715,
+      "intensity_difference": 169.43814295419253,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 71,
+      "time_seconds": 0.29583333333333334,
+      "background_intensity": 219.3995414402174,
+      "dark_intensity": 50.392857142857146,
+      "intensity_difference": 169.00668429736027
+    },
+    {
+      "frame_number": 72,
+      "time_seconds": 0.3,
+      "background_intensity": 219.44635982789856,
+      "dark_intensity": 50.214285714285715,
+      "intensity_difference": 169.23207411361284,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 73,
+      "time_seconds": 0.30416666666666664,
+      "background_intensity": 219.46410778985506,
+      "dark_intensity": 50.32142857142857,
+      "intensity_difference": 169.1426792184265
+    },
+    {
+      "frame_number": 74,
+      "time_seconds": 0.30833333333333335,
+      "background_intensity": 219.4016644021739,
+      "dark_intensity": 49.857142857142854,
+      "intensity_difference": 169.54452154503105,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 75,
+      "time_seconds": 0.3125,
+      "background_intensity": 219.4164402173913,
+      "dark_intensity": 49.92857142857143,
+      "intensity_difference": 169.48786878881987
+    },
+    {
+      "frame_number": 76,
+      "time_seconds": 0.31666666666666665,
+      "background_intensity": 219.44556725543478,
+      "dark_intensity": 52.142857142857146,
+      "intensity_difference": 167.30271011257764,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 77,
+      "time_seconds": 0.32083333333333336,
+      "background_intensity": 219.4281589673913,
+      "dark_intensity": 52.285714285714285,
+      "intensity_difference": 167.14244468167703,
+      "time_difference_to_previous": 0.004166666666666707
+    },
+    {
+      "frame_number": 78,
+      "time_seconds": 0.325,
+      "background_intensity": 219.44426517210144,
+      "dark_intensity": 49.5,
+      "intensity_difference": 169.94426517210144
+    },
+    {
+      "frame_number": 79,
+      "time_seconds": 0.32916666666666666,
+      "background_intensity": 219.44372735507247,
+      "dark_intensity": 49.17857142857143,
+      "intensity_difference": 170.26515592650105,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 80,
+      "time_seconds": 0.3333333333333333,
+      "background_intensity": 219.45918251811594,
+      "dark_intensity": 49.607142857142854,
+      "intensity_difference": 169.85203966097308
+    },
+    {
+      "frame_number": 81,
+      "time_seconds": 0.3375,
+      "background_intensity": 219.44454823369566,
+      "dark_intensity": 47.57142857142857,
+      "intensity_difference": 171.87311966226707,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 82,
+      "time_seconds": 0.3416666666666667,
+      "background_intensity": 219.42835711050725,
+      "dark_intensity": 49.0,
+      "intensity_difference": 170.42835711050725
+    },
+    {
+      "frame_number": 83,
+      "time_seconds": 0.3458333333333333,
+      "background_intensity": 219.42895153985506,
+      "dark_intensity": 48.964285714285715,
+      "intensity_difference": 170.46466582556934,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 84,
+      "time_seconds": 0.35,
+      "background_intensity": 219.44627490942028,
+      "dark_intensity": 44.464285714285715,
+      "intensity_difference": 174.98198919513456
+    },
+    {
+      "frame_number": 85,
+      "time_seconds": 0.3541666666666667,
+      "background_intensity": 219.45513473731884,
+      "dark_intensity": 44.42857142857143,
+      "intensity_difference": 175.02656330874743,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 86,
+      "time_seconds": 0.35833333333333334,
+      "background_intensity": 219.45428555253622,
+      "dark_intensity": 46.392857142857146,
+      "intensity_difference": 173.06142840967908
+    },
+    {
+      "frame_number": 87,
+      "time_seconds": 0.3625,
+      "background_intensity": 219.4483695652174,
+      "dark_intensity": 46.32142857142857,
+      "intensity_difference": 173.12694099378882,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 88,
+      "time_seconds": 0.36666666666666664,
+      "background_intensity": 219.4634850543478,
+      "dark_intensity": 46.17857142857143,
+      "intensity_difference": 173.28491362577637
+    },
+    {
+      "frame_number": 89,
+      "time_seconds": 0.37083333333333335,
+      "background_intensity": 219.44805819746378,
+      "dark_intensity": 46.642857142857146,
+      "intensity_difference": 172.80520105460664,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 90,
+      "time_seconds": 0.375,
+      "background_intensity": 219.42399796195653,
+      "dark_intensity": 46.75,
+      "intensity_difference": 172.67399796195653
+    },
+    {
+      "frame_number": 91,
+      "time_seconds": 0.37916666666666665,
+      "background_intensity": 219.41983695652175,
+      "dark_intensity": 47.0,
+      "intensity_difference": 172.41983695652175,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 92,
+      "time_seconds": 0.38333333333333336,
+      "background_intensity": 219.4510586503623,
+      "dark_intensity": 46.464285714285715,
+      "intensity_difference": 172.9867729360766,
+      "time_difference_to_previous": 0.004166666666666707
+    },
+    {
+      "frame_number": 93,
+      "time_seconds": 0.3875,
+      "background_intensity": 219.45292685688406,
+      "dark_intensity": 46.892857142857146,
+      "intensity_difference": 172.56006971402692
+    },
+    {
+      "frame_number": 94,
+      "time_seconds": 0.39166666666666666,
+      "background_intensity": 219.42943274456522,
+      "dark_intensity": 48.035714285714285,
+      "intensity_difference": 171.39371845885094,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 95,
+      "time_seconds": 0.3958333333333333,
+      "background_intensity": 219.43382019927537,
+      "dark_intensity": 48.642857142857146,
+      "intensity_difference": 170.79096305641824
+    },
+    {
+      "frame_number": 96,
+      "time_seconds": 0.4,
+      "background_intensity": 219.39235167572463,
+      "dark_intensity": 45.964285714285715,
+      "intensity_difference": 173.4280659614389,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 97,
+      "time_seconds": 0.4041666666666667,
+      "background_intensity": 219.41236413043478,
+      "dark_intensity": 46.035714285714285,
+      "intensity_difference": 173.3766498447205
+    },
+    {
+      "frame_number": 98,
+      "time_seconds": 0.4083333333333333,
+      "background_intensity": 219.40670289855072,
+      "dark_intensity": 45.25,
+      "intensity_difference": 174.15670289855072,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 99,
+      "time_seconds": 0.4125,
+      "background_intensity": 219.4094485960145,
+      "dark_intensity": 45.035714285714285,
+      "intensity_difference": 174.37373431030022
+    },
+    {
+      "frame_number": 100,
+      "time_seconds": 0.4166666666666667,
+      "background_intensity": 219.4374716938406,
+      "dark_intensity": 46.57142857142857,
+      "intensity_difference": 172.866043122412,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 101,
+      "time_seconds": 0.42083333333333334,
+      "background_intensity": 219.44986979166666,
+      "dark_intensity": 44.285714285714285,
+      "intensity_difference": 175.16415550595238
+    },
+    {
+      "frame_number": 102,
+      "time_seconds": 0.425,
+      "background_intensity": 219.43181046195653,
+      "dark_intensity": 45.0,
+      "intensity_difference": 174.43181046195653,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 103,
+      "time_seconds": 0.42916666666666664,
+      "background_intensity": 219.42320538949275,
+      "dark_intensity": 45.17857142857143,
+      "intensity_difference": 174.2446339609213
+    },
+    {
+      "frame_number": 104,
+      "time_seconds": 0.43333333333333335,
+      "background_intensity": 219.41502490942028,
+      "dark_intensity": 41.785714285714285,
+      "intensity_difference": 177.629310623706,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 105,
+      "time_seconds": 0.4375,
+      "background_intensity": 219.41774230072463,
+      "dark_intensity": 41.25,
+      "intensity_difference": 178.16774230072463
+    },
+    {
+      "frame_number": 106,
+      "time_seconds": 0.44166666666666665,
+      "background_intensity": 219.4243942481884,
+      "dark_intensity": 41.82142857142857,
+      "intensity_difference": 177.60296567675982,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 107,
+      "time_seconds": 0.44583333333333336,
+      "background_intensity": 219.42722486413044,
+      "dark_intensity": 43.035714285714285,
+      "intensity_difference": 176.39151057841616,
+      "time_difference_to_previous": 0.004166666666666707
+    },
+    {
+      "frame_number": 108,
+      "time_seconds": 0.45,
+      "background_intensity": 219.42903645833334,
+      "dark_intensity": 39.0,
+      "intensity_difference": 180.42903645833334
+    },
+    {
+      "frame_number": 109,
+      "time_seconds": 0.45416666666666666,
+      "background_intensity": 219.43407495471016,
+      "dark_intensity": 38.82142857142857,
+      "intensity_difference": 180.61264638328157,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 110,
+      "time_seconds": 0.4583333333333333,
+      "background_intensity": 219.4277060688406,
+      "dark_intensity": 40.535714285714285,
+      "intensity_difference": 178.89199178312631
+    },
+    {
+      "frame_number": 111,
+      "time_seconds": 0.4625,
+      "background_intensity": 219.4192425271739,
+      "dark_intensity": 40.714285714285715,
+      "intensity_difference": 178.70495681288818,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 112,
+      "time_seconds": 0.4666666666666667,
+      "background_intensity": 219.44961503623188,
+      "dark_intensity": 42.5,
+      "intensity_difference": 176.94961503623188
+    },
+    {
+      "frame_number": 113,
+      "time_seconds": 0.4708333333333333,
+      "background_intensity": 219.43257472826087,
+      "dark_intensity": 41.285714285714285,
+      "intensity_difference": 178.1468604425466,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 114,
+      "time_seconds": 0.475,
+      "background_intensity": 219.41179800724638,
+      "dark_intensity": 43.0,
+      "intensity_difference": 176.41179800724638
+    },
+    {
+      "frame_number": 115,
+      "time_seconds": 0.4791666666666667,
+      "background_intensity": 219.4198935688406,
+      "dark_intensity": 42.17857142857143,
+      "intensity_difference": 177.24132214026918,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 116,
+      "time_seconds": 0.48333333333333334,
+      "background_intensity": 219.4505774456522,
+      "dark_intensity": 43.535714285714285,
+      "intensity_difference": 175.9148631599379
+    },
+    {
+      "frame_number": 117,
+      "time_seconds": 0.4875,
+      "background_intensity": 219.4383208786232,
+      "dark_intensity": 44.892857142857146,
+      "intensity_difference": 174.54546373576605,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 118,
+      "time_seconds": 0.49166666666666664,
+      "background_intensity": 219.44078351449275,
+      "dark_intensity": 45.42857142857143,
+      "intensity_difference": 174.0122120859213
+    },
+    {
+      "frame_number": 119,
+      "time_seconds": 0.49583333333333335,
+      "background_intensity": 219.44103826992753,
+      "dark_intensity": 45.464285714285715,
+      "intensity_difference": 173.9767525556418,
+      "time_difference_to_previous": 0.00833333333333336
+    },
+    {
+      "frame_number": 120,
+      "time_seconds": 0.5,
+      "background_intensity": 219.40322124094203,
+      "dark_intensity": 46.142857142857146,
+      "intensity_difference": 173.2603640980849
+    },
+    {
+      "frame_number": 121,
+      "time_seconds": 0.5041666666666667,
+      "background_intensity": 219.41777060688406,
+      "dark_intensity": 45.67857142857143,
+      "intensity_difference": 173.73919917831262,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 122,
+      "time_seconds": 0.5083333333333333,
+      "background_intensity": 219.39988111413044,
+      "dark_intensity": 52.392857142857146,
+      "intensity_difference": 167.0070239712733
+    },
+    {
+      "frame_number": 123,
+      "time_seconds": 0.5125,
+      "background_intensity": 219.40712749094203,
+      "dark_intensity": 52.57142857142857,
+      "intensity_difference": 166.83569891951345,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 124,
+      "time_seconds": 0.5166666666666667,
+      "background_intensity": 219.4349524456522,
+      "dark_intensity": 56.57142857142857,
+      "intensity_difference": 162.86352387422363,
+      "time_difference_to_previous": 0.004166666666666763
+    },
+    {
+      "frame_number": 125,
+      "time_seconds": 0.5208333333333334,
+      "background_intensity": 219.44171761775362,
+      "dark_intensity": 56.57142857142857,
+      "intensity_difference": 162.87028904632507
+    },
+    {
+      "frame_number": 126,
+      "time_seconds": 0.525,
+      "background_intensity": 219.4341598731884,
+      "dark_intensity": 56.67857142857143,
+      "intensity_difference": 162.755588444617,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 127,
+      "time_seconds": 0.5291666666666667,
+      "background_intensity": 219.43062160326087,
+      "dark_intensity": 57.785714285714285,
+      "intensity_difference": 161.6449073175466
+    },
+    {
+      "frame_number": 128,
+      "time_seconds": 0.5333333333333333,
+      "background_intensity": 219.39988111413044,
+      "dark_intensity": 59.892857142857146,
+      "intensity_difference": 159.5070239712733,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 129,
+      "time_seconds": 0.5375,
+      "background_intensity": 219.39976788949275,
+      "dark_intensity": 60.07142857142857,
+      "intensity_difference": 159.3283393180642
+    },
+    {
+      "frame_number": 130,
+      "time_seconds": 0.5416666666666666,
+      "background_intensity": 219.40101336050725,
+      "dark_intensity": 66.0,
+      "intensity_difference": 153.40101336050725,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 131,
+      "time_seconds": 0.5458333333333333,
+      "background_intensity": 219.41162817028984,
+      "dark_intensity": 66.0,
+      "intensity_difference": 153.41162817028984
+    },
+    {
+      "frame_number": 132,
+      "time_seconds": 0.55,
+      "background_intensity": 219.39421988224638,
+      "dark_intensity": 66.75,
+      "intensity_difference": 152.64421988224638,
+      "time_difference_to_previous": 0.008333333333333415
+    },
+    {
+      "frame_number": 133,
+      "time_seconds": 0.5541666666666667,
+      "background_intensity": 219.41332653985506,
+      "dark_intensity": 67.92857142857143,
+      "intensity_difference": 151.48475511128362
+    },
+    {
+      "frame_number": 134,
+      "time_seconds": 0.5583333333333333,
+      "background_intensity": 219.42699841485506,
+      "dark_intensity": 71.35714285714286,
+      "intensity_difference": 148.0698555577122,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 135,
+      "time_seconds": 0.5625,
+      "background_intensity": 219.4283004981884,
+      "dark_intensity": 72.53571428571429,
+      "intensity_difference": 146.8925862124741
+    },
+    {
+      "frame_number": 136,
+      "time_seconds": 0.5666666666666667,
+      "background_intensity": 219.4302819293478,
+      "dark_intensity": 72.28571428571429,
+      "intensity_difference": 147.14456764363354,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 137,
+      "time_seconds": 0.5708333333333333,
+      "background_intensity": 219.43141417572463,
+      "dark_intensity": 73.21428571428571,
+      "intensity_difference": 146.2171284614389
+    },
+    {
+      "frame_number": 138,
+      "time_seconds": 0.575,
+      "background_intensity": 219.41876132246378,
+      "dark_intensity": 76.85714285714286,
+      "intensity_difference": 142.56161846532092,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 139,
+      "time_seconds": 0.5791666666666667,
+      "background_intensity": 219.420459692029,
+      "dark_intensity": 76.75,
+      "intensity_difference": 142.670459692029,
+      "time_difference_to_previous": 0.004166666666666763
+    },
+    {
+      "frame_number": 140,
+      "time_seconds": 0.5833333333333334,
+      "background_intensity": 219.43897192028984,
+      "dark_intensity": 77.07142857142857,
+      "intensity_difference": 142.36754334886126
+    },
+    {
+      "frame_number": 141,
+      "time_seconds": 0.5875,
+      "background_intensity": 219.43781136775362,
+      "dark_intensity": 77.53571428571429,
+      "intensity_difference": 141.90209708203935,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 142,
+      "time_seconds": 0.5916666666666667,
+      "background_intensity": 219.4313575634058,
+      "dark_intensity": 80.14285714285714,
+      "intensity_difference": 139.28850042054867
+    },
+    {
+      "frame_number": 143,
+      "time_seconds": 0.5958333333333333,
+      "background_intensity": 219.43328238224638,
+      "dark_intensity": 82.39285714285714,
+      "intensity_difference": 137.04042523938924,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 144,
+      "time_seconds": 0.6,
+      "background_intensity": 219.44355751811594,
+      "dark_intensity": 90.57142857142857,
+      "intensity_difference": 128.87212894668738
+    },
+    {
+      "frame_number": 145,
+      "time_seconds": 0.6041666666666666,
+      "background_intensity": 219.44140625,
+      "dark_intensity": 91.60714285714286,
+      "intensity_difference": 127.83426339285714,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 146,
+      "time_seconds": 0.6083333333333333,
+      "background_intensity": 219.49119678442028,
+      "dark_intensity": 91.53571428571429,
+      "intensity_difference": 127.95548249870599
+    },
+    {
+      "frame_number": 147,
+      "time_seconds": 0.6125,
+      "background_intensity": 219.49074388586956,
+      "dark_intensity": 94.35714285714286,
+      "intensity_difference": 125.1336010287267,
+      "time_difference_to_previous": 0.008333333333333415
+    },
+    {
+      "frame_number": 148,
+      "time_seconds": 0.6166666666666667,
+      "background_intensity": 219.47367527173913,
+      "dark_intensity": 97.5,
+      "intensity_difference": 121.97367527173913
+    },
+    {
+      "frame_number": 149,
+      "time_seconds": 0.6208333333333333,
+      "background_intensity": 219.47302423007247,
+      "dark_intensity": 103.14285714285714,
+      "intensity_difference": 116.33016708721533,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 150,
+      "time_seconds": 0.625,
+      "background_intensity": 219.4589560688406,
+      "dark_intensity": 107.82142857142857,
+      "intensity_difference": 111.63752749741202
+    },
+    {
+      "frame_number": 151,
+      "time_seconds": 0.6291666666666667,
+      "background_intensity": 219.48828125,
+      "dark_intensity": 111.03571428571429,
+      "intensity_difference": 108.45256696428571,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 152,
+      "time_seconds": 0.6333333333333333,
+      "background_intensity": 219.45904098731884,
+      "dark_intensity": 120.10714285714286,
+      "intensity_difference": 99.35189813017598
+    },
+    {
+      "frame_number": 153,
+      "time_seconds": 0.6375,
+      "background_intensity": 219.47231657608697,
+      "dark_intensity": 122.78571428571429,
+      "intensity_difference": 96.68660229037268,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 154,
+      "time_seconds": 0.6416666666666667,
+      "background_intensity": 219.50843523550725,
+      "dark_intensity": 126.85714285714286,
+      "intensity_difference": 92.65129237836439,
+      "time_difference_to_previous": 0.004166666666666763
+    },
+    {
+      "frame_number": 155,
+      "time_seconds": 0.6458333333333334,
+      "background_intensity": 219.50605751811594,
+      "dark_intensity": 126.92857142857143,
+      "intensity_difference": 92.57748608954451
+    },
+    {
+      "frame_number": 156,
+      "time_seconds": 0.65,
+      "background_intensity": 219.4624660326087,
+      "dark_intensity": 131.46428571428572,
+      "intensity_difference": 87.99818031832297,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 157,
+      "time_seconds": 0.6541666666666667,
+      "background_intensity": 219.47330729166666,
+      "dark_intensity": 134.35714285714286,
+      "intensity_difference": 85.1161644345238
+    },
+    {
+      "frame_number": 158,
+      "time_seconds": 0.6583333333333333,
+      "background_intensity": 219.46475883152175,
+      "dark_intensity": 138.10714285714286,
+      "intensity_difference": 81.35761597437889,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 159,
+      "time_seconds": 0.6625,
+      "background_intensity": 219.47789288949275,
+      "dark_intensity": 140.39285714285714,
+      "intensity_difference": 79.08503574663561
+    },
+    {
+      "frame_number": 160,
+      "time_seconds": 0.6666666666666666,
+      "background_intensity": 219.5358355978261,
+      "dark_intensity": 144.92857142857142,
+      "intensity_difference": 74.60726416925468,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 161,
+      "time_seconds": 0.6708333333333333,
+      "background_intensity": 219.54415760869566,
+      "dark_intensity": 147.07142857142858,
+      "intensity_difference": 72.47272903726707
+    },
+    {
+      "frame_number": 162,
+      "time_seconds": 0.675,
+      "background_intensity": 219.55197010869566,
+      "dark_intensity": 151.46428571428572,
+      "intensity_difference": 68.08768439440993,
+      "time_difference_to_previous": 0.008333333333333415
+    },
+    {
+      "frame_number": 163,
+      "time_seconds": 0.6791666666666667,
+      "background_intensity": 219.56298120471016,
+      "dark_intensity": 153.25,
+      "intensity_difference": 66.31298120471016
+    },
+    {
+      "frame_number": 164,
+      "time_seconds": 0.6833333333333333,
+      "background_intensity": 219.5597259963768,
+      "dark_intensity": 157.96428571428572,
+      "intensity_difference": 61.59544028209109,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 165,
+      "time_seconds": 0.6875,
+      "background_intensity": 219.55100769927537,
+      "dark_intensity": 158.32142857142858,
+      "intensity_difference": 61.22957912784679
+    },
+    {
+      "frame_number": 166,
+      "time_seconds": 0.6916666666666667,
+      "background_intensity": 219.5613960597826,
+      "dark_intensity": 163.46428571428572,
+      "intensity_difference": 56.09711034549687,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 167,
+      "time_seconds": 0.6958333333333333,
+      "background_intensity": 219.55966938405797,
+      "dark_intensity": 164.67857142857142,
+      "intensity_difference": 54.88109795548655
+    },
+    {
+      "frame_number": 168,
+      "time_seconds": 0.7,
+      "background_intensity": 219.5514605978261,
+      "dark_intensity": 165.92857142857142,
+      "intensity_difference": 53.62288916925468,
+      "time_difference_to_previous": 0.008333333333333304
+    },
+    {
+      "frame_number": 169,
+      "time_seconds": 0.7041666666666667,
+      "background_intensity": 219.55335711050725,
+      "dark_intensity": 165.92857142857142,
+      "intensity_difference": 53.62478568193583,
+      "time_difference_to_previous": 0.004166666666666763
+    },
+    {
+      "frame_number": 22394,
+      "time_seconds": 93.30833333333334,
+      "background_intensity": 216.78733582427537,
+      "dark_intensity": 166.14285714285714,
+      "intensity_difference": 50.644478681418235,
+      "time_difference_to_previous": 92.60416666666667
+    },
+    {
+      "frame_number": 26250,
+      "time_seconds": 109.375,
+      "background_intensity": 216.52884397644928,
+      "dark_intensity": 153.42857142857142,
+      "intensity_difference": 63.100272547877864,
+      "time_difference_to_previous": 16.066666666666663
+    },
+    {
+      "frame_number": 31392,
+      "time_seconds": 130.8,
+      "background_intensity": 216.99139492753622,
+      "dark_intensity": 144.21428571428572,
+      "intensity_difference": 72.7771092132505,
+      "time_difference_to_previous": 21.42500000000001
+    },
+    {
+      "frame_number": 33310,
+      "time_seconds": 138.79166666666666,
+      "background_intensity": 216.89529551630434,
+      "dark_intensity": 157.53571428571428,
+      "intensity_difference": 59.35958123059007,
+      "time_difference_to_previous": 7.991666666666646
+    },
+    {
+      "frame_number": 33955,
+      "time_seconds": 141.47916666666666,
+      "background_intensity": 217.26970108695653,
+      "dark_intensity": 159.25,
+      "intensity_difference": 58.01970108695653,
+      "time_difference_to_previous": 2.6875
+    },
+    {
+      "frame_number": 34595,
+      "time_seconds": 144.14583333333334,
+      "background_intensity": 216.6022701539855,
+      "dark_intensity": 141.89285714285714,
+      "intensity_difference": 74.70941301112836,
+      "time_difference_to_previous": 2.6666666666666856
+    }
+  ],
+  "summary": {
+    "total_dark_frames": 176,
+    "analysis_timestamp": "2025-11-17T16:31:47.519791"
+  }
+}
