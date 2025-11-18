@@ -30,14 +30,14 @@ class VideoDarkPixelAnalyzer:
         self.duration = self.total_frames / self.fps
         self.frame_width = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         self.frame_height = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        
+
         # Initialisierung der Variablen
         self.background_region = None
         self.dark_region = None
         self.background_threshold = None
         self.results = []
         self.analysis_region = None  # Neuer: Bereich für Analyse dunkler Pixel
-        
+
     def select_analysis_region(self, frame, window_name="Analyse-Bereich Auswahl"):
         """
         Ermöglicht die Auswahl eines Bereichs mit Zoom-Funktion (Mausrad).
@@ -47,18 +47,18 @@ class VideoDarkPixelAnalyzer:
         print("- Mausrad: Zoom rein/raus")
         print("- Linke Maustaste: Rechteckigen Bereich auswählen")
         print("- Enter/SPACE: Auswahl bestätigen")
-        
+
         display_frame = frame.copy()
-        
+
         # Verwende SelectROI für rechteckige Auswahl (builtin zoom möglich)
         roi = cv2.selectROI(window_name, display_frame, showCrosshair=True)
         cv2.destroyAllWindows()
-        
+
         if roi[2] > 0 and roi[3] > 0:  # Prüfe ob eine gültige Region ausgewählt wurde
             return roi
         else:
             raise ValueError("Kein gültiger Analyse-Bereich ausgewählt")
-    
+
     def select_region(self, frame, region_name, window_name="Region Selection"):
         """
         Ermöglicht die Auswahl einer Region im Frame
@@ -67,19 +67,19 @@ class VideoDarkPixelAnalyzer:
         print("1. Klicken Sie links oben auf die Region")
         print("2. Ziehen Sie eine rechteckige Auswahl")
         print("3. Drücken Sie Enter oder SPACE um zu bestätigen")
-        
+
         # Erstelle kopie für die Auswahl
         display_frame = frame.copy()
-        
+
         # Verwende SelectROI für rechteckige Auswahl
         roi = cv2.selectROI(window_name, display_frame, showCrosshair=True)
         cv2.destroyAllWindows()
-        
+
         if roi[2] > 0 and roi[3] > 0:  # Prüfe ob eine gültige Region ausgewählt wurde
             return roi
         else:
             raise ValueError(f"Keine gültige {region_name} ausgewählt")
-    
+
     def select_pixels(self, frame, pixel_name, window_name="Pixel Selection"):
         """
         Ermöglicht die Auswahl einzelner Pixel durch Mausklick.
@@ -89,10 +89,10 @@ class VideoDarkPixelAnalyzer:
         print(f"\nBitte wählen Sie Pixel für '{pixel_name}' aus:")
         print("- Linke Maustaste: Pixel hinzufügen")
         print("- ESC oder SPACE: Fertig")
-        
+
         display_frame = frame.copy()
         pixels = []
-        
+
         def mouse_callback(event, x, y, flags, param):
             if event == cv2.EVENT_LBUTTONDOWN:
                 pixels.append((x, y))
@@ -100,24 +100,24 @@ class VideoDarkPixelAnalyzer:
                 cv2.circle(display_frame, (x, y), 5, (0, 255, 0), -1)
                 cv2.imshow(window_name, display_frame)
                 print(f"  ✓ Pixel hinzugefügt: ({x}, {y})")
-        
+
         cv2.namedWindow(window_name, cv2.WINDOW_AUTOSIZE)
         cv2.imshow(window_name, display_frame)
         cv2.setMouseCallback(window_name, mouse_callback)
-        
+
         # Warte auf Benutzereingabe (ESC=27, SPACE=32)
         while True:
             key = cv2.waitKey(0)
             if key == 27 or key == 32:  # ESC or SPACE
                 break
-        
+
         cv2.destroyAllWindows()
-        
+
         if not pixels:
             raise ValueError(f"Keine Pixel für '{pixel_name}' ausgewählt")
-        
+
         return pixels
-    
+
     def extract_pixels_intensity(self, frame, pixels, analysis_roi=None):
         """
         Extrahiert die mittlere Intensität von ausgewählten Pixeln.
@@ -128,9 +128,9 @@ class VideoDarkPixelAnalyzer:
             gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         else:
             gray_frame = frame
-        
+
         valid_pixels = []
-        
+
         for x, y in pixels:
             # Prüfe ob Pixel im Frame liegt
             if 0 <= y < gray_frame.shape[0] and 0 <= x < gray_frame.shape[1]:
@@ -139,21 +139,21 @@ class VideoDarkPixelAnalyzer:
                     ax, ay, aw, ah = analysis_roi
                     if not (ax <= x < ax + aw and ay <= y < ay + ah):
                         continue
-                
+
                 valid_pixels.append(gray_frame[y, x])
-        
+
         if not valid_pixels:
             return np.nan
-        
+
         return np.mean(valid_pixels)
-    
+
     def extract_region_intensity(self, frame, roi, analysis_roi=None):
         """
         Extrahiert die mittlere Intensität einer Region.
         Falls analysis_roi gesetzt ist, wird nur der Überlappungsbereich berücksichtigt.
         """
         x, y, w, h = roi
-        
+
         # Falls ein Analyse-Bereich definiert ist, beschneide die Region auf diesen Bereich
         if analysis_roi is not None:
             ax, ay, aw, ah = analysis_roi
@@ -162,29 +162,29 @@ class VideoDarkPixelAnalyzer:
             y1 = max(y, ay)
             x2 = min(x + w, ax + aw)
             y2 = min(y + h, ay + ah)
-            
+
             if x2 <= x1 or y2 <= y1:
                 # Keine Überlappung
                 return np.nan
-            
+
             region = frame[y1:y2, x1:x2]
         else:
             region = frame[y:y+h, x:x+w]
-        
+
         # Konvertiere zu Graustufen falls nötig
         if len(region.shape) == 3:
             gray_region = cv2.cvtColor(region, cv2.COLOR_BGR2GRAY)
         else:
             gray_region = region
-            
+
         return np.mean(gray_region)
-    
-    def analyze_video(self, background_roi, dark_roi, intensity_threshold=50, analysis_roi=None, 
-                      background_pixels=None, dark_pixels=None):
+
+    def analyze_video(self, background_roi, dark_roi, intensity_threshold=50, analysis_roi=None,
+                      background_pixels=None, dark_pixels=None, log_darkest_pixel_path=None):
         """
         Analysiert das Video und erkennt dunkle Pixel.
         Kann entweder mit ROI (Region of Interest) oder mit einzelnen Pixeln arbeiten.
-        
+
         Falls background_pixels/dark_pixels gesetzt sind, werden diese statt ROI verwendet.
         Falls analysis_roi gesetzt ist, werden nur Pixel innerhalb dieses Bereichs analysiert.
         """
@@ -192,10 +192,10 @@ class VideoDarkPixelAnalyzer:
         print(f"FPS: {self.fps}")
         if analysis_roi:
             print(f"Analyse-Bereich: {analysis_roi}")
-        
+
         # Bestimme Analyse-Modus
         use_pixels = background_pixels is not None and dark_pixels is not None
-        
+
         if use_pixels:
             print(f"Modus: Pixel-basierte Analyse")
             print(f"- Hintergrund-Pixel: {len(background_pixels)} Pixel")
@@ -204,36 +204,52 @@ class VideoDarkPixelAnalyzer:
             print(f"Modus: ROI-basierte Analyse")
             print(f"- Hintergrund-ROI: {background_roi}")
             print(f"- Dunkle ROI: {dark_roi}")
-        
+
         frame_count = 0
         last_dark_frame = None
         dark_frames = []
         recent_time_diffs = []  # Speichere die letzten 5 Zeitdifferenzen
-        
+
         # Determine progress update interval (update ~100 times)
         try:
             total = max(1, int(self.total_frames))
         except Exception:
             total = 1
         update_interval = max(1, total // 100)
-        
+
         # Berechne Hintergrund-Referenzintensität vom ersten Frame
         first_frame = self.get_frame(0)
         if first_frame is None:
             raise ValueError("Kann ersten Frame nicht lesen")
-        
+
         if use_pixels:
             background_reference = self.extract_pixels_intensity(first_frame, background_pixels, analysis_roi)
         else:
             background_reference = self.extract_region_intensity(first_frame, background_roi, analysis_roi)
-        
+
         print(f"Hintergrund-Referenzintensität: {background_reference:.2f}")
-        
+
+        darkest_pixel_log_file = None
+        if log_darkest_pixel_path:
+            try:
+                darkest_pixel_log_file = open(log_darkest_pixel_path, 'w', encoding='utf-8')
+                print(f"Logge dunkelsten Pixel pro Frame in: {log_darkest_pixel_path}")
+            except IOError as e:
+                print(f"Warnung: Konnte Log-Datei für dunkelste Pixel nicht öffnen: {e}")
+                darkest_pixel_log_file = None
+
         while True:
             ret, frame = self.cap.read()
             if not ret:
                 break
-            
+
+            # Logge den dunkelsten Pixelwert, falls aktiviert
+            if darkest_pixel_log_file:
+                gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                min_val = np.min(gray_frame)
+                normalized_min_val = 1.0 - (min_val / 255.0)
+                darkest_pixel_log_file.write(f"{normalized_min_val:.4f}\n".replace('.', ','))
+
             # Analysiere aktuellen Frame
             if use_pixels:
                 background_intensity = self.extract_pixels_intensity(frame, background_pixels, analysis_roi)
@@ -241,16 +257,16 @@ class VideoDarkPixelAnalyzer:
             else:
                 background_intensity = self.extract_region_intensity(frame, background_roi, analysis_roi)
                 dark_intensity = self.extract_region_intensity(frame, dark_roi, analysis_roi)
-            
+
             # Prüfe auf dunkle Pixel
             intensity_difference = background_intensity - dark_intensity
-            
+
             # frame_time is calculated from the provided time_fps if set,
             # otherwise fall back to the video's fps
             time_fps = getattr(self, 'used_recorded_fps', None) or self.fps
             frame_time = frame_count / time_fps
             is_dark_frame = intensity_difference > intensity_threshold
-            
+
             if is_dark_frame:
                 dark_frames.append({
                     'frame_number': frame_count,
@@ -259,13 +275,13 @@ class VideoDarkPixelAnalyzer:
                     'dark_intensity': dark_intensity,
                     'intensity_difference': intensity_difference
                 })
-                
+
                 # Berechne Zeitdifferenz zum vorherigen dunklen Frame
                 # Nur speichern, wenn größer als 1/fps (d.h. nicht direkt nacheinander)
                 if last_dark_frame is not None:
                     time_diff = frame_time - last_dark_frame
                     min_time_gap = 1.0 / time_fps  # Minimale Zeitlücke: 1 Frame
-                    
+
                     if time_diff >= min_time_gap:
                         # Neue "Gruppe" von dunklen Frames erkannt
                         dark_frames[-1]['time_difference_to_previous'] = time_diff
@@ -274,7 +290,7 @@ class VideoDarkPixelAnalyzer:
                             recent_time_diffs.pop(0)
                         # Drucke Meldung und dann Progressbar darunter
                         #print(f"\nDunkles Frame bei {frame_time:.3f}s (Frame {frame_count}) - "
-                        #      f"Zeitdifferenz: {time_diff:.3f}s | Letzte: " + 
+                        #      f"Zeitdifferenz: {time_diff:.3f}s | Letzte: " +
                         #     ", ".join([f"{d:.3f}s" for d in recent_time_diffs[-5:]]))
                         last_dark_frame = frame_time
                     else:
@@ -283,13 +299,16 @@ class VideoDarkPixelAnalyzer:
                 else:
                     #print(f"\nErstes dunkles Frame bei {frame_time:.3f}s (Frame {frame_count})")
                     last_dark_frame = frame_time
-            
+
             frame_count += 1
-            
+
             # Fortschrittsanzeige mit letzten 5 Zeitdifferenzen
             if frame_count % update_interval == 0 or frame_count == total:
                 self._print_progress(frame_count, total, recent_time_diffs)
-        
+
+        if darkest_pixel_log_file:
+            darkest_pixel_log_file.close()
+
         self.results = dark_frames
         return dark_frames
 
@@ -301,12 +320,12 @@ class VideoDarkPixelAnalyzer:
             percent = 0.0
         filled = int(round(bar_length * percent))
         bar = '#' * filled + '-' * (bar_length - filled)
-        
+
         # Formatiere letzte Zeitdifferenzen
         diffs_str = ""
         if recent_diffs:
             diffs_str = " | Letzte Zeiten: " + ", ".join([f"{d:.3f}s" for d in recent_diffs[-5:]])
-        
+
         print(f"\rProgress: |{bar}| {percent*100:6.2f}% ({current}/{total}){diffs_str}", end='', flush=True)
         if current >= total:
             print()
@@ -319,7 +338,7 @@ class VideoDarkPixelAnalyzer:
         ret, frame = self.cap.read()
         self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  # Reset Position
         return frame if ret else None
-    
+
     def save_results(self, output_path):
         """
         Speichert die Ergebnisse in einer JSON-Datei
@@ -339,10 +358,10 @@ class VideoDarkPixelAnalyzer:
                 'analysis_timestamp': datetime.now().isoformat()
             }
         }
-        
+
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(results_data, f, indent=2, ensure_ascii=False)
-        
+
         print(f"\nErgebnisse gespeichert in: {output_path}")
 
     def save_time_differences(self, out_dir=None, remove_outliers=True):
@@ -371,23 +390,23 @@ class VideoDarkPixelAnalyzer:
                 td = r.get('time_difference_to_previous')
                 if td is not None and td >= 1.0:
                     time_diffs.append(td)
-            
+
             if not time_diffs:
                 print("Keine Zeitdifferenzen vorhanden.")
                 return
-            
+
             # Ausreißer entfernen (optional)
             if remove_outliers and len(time_diffs) > 2:
                 mean_val = np.mean(time_diffs)
                 std_val = np.std(time_diffs)
                 threshold = 2.0  # 2 Standardabweichungen
                 filtered_diffs = [td for td in time_diffs if abs(td - mean_val) <= threshold * std_val]
-                
+
                 removed_count = len(time_diffs) - len(filtered_diffs)
                 if removed_count > 0:
                     print(f"Ausreißer entfernt: {removed_count} Wert(e)")
                     time_diffs = filtered_diffs
-            
+
             # Formatiere und speichere Werte (gerundet auf 5 Dezimalstellen, Komma als Trennzeichen)
             lines = []
             for td in time_diffs:
@@ -427,30 +446,30 @@ class VideoDarkPixelAnalyzer:
                 td = r.get('time_difference_to_previous')
                 if td is not None and td >= 1.0:
                     time_diffs.append(td)
-            
+
             if not time_diffs:
                 print("Keine Zeitdifferenzen vorhanden.")
                 return
-            
+
             # Wähle nur jeden zweiten Wert (Index 1, 3, 5, ...)
             every_second_diffs = time_diffs[1::2]
-            
+
             if not every_second_diffs:
                 print("Keine zweiten Ergebnisse vorhanden (zu wenig Einträge).")
                 return
-            
+
             # Ausreißer entfernen (optional)
             if remove_outliers and len(every_second_diffs) > 2:
                 mean_val = np.mean(every_second_diffs)
                 std_val = np.std(every_second_diffs)
                 threshold = 2.0  # 2 Standardabweichungen
                 filtered_diffs = [td for td in every_second_diffs if abs(td - mean_val) <= threshold * std_val]
-                
+
                 removed_count = len(every_second_diffs) - len(filtered_diffs)
                 if removed_count > 0:
                     print(f"Ausreißer entfernt (zweite Ergebnisse): {removed_count} Wert(e)")
                     every_second_diffs = filtered_diffs
-            
+
             # Formatiere und speichere Werte (gerundet auf 5 Dezimalstellen, Komma als Trennzeichen)
             lines = []
             for td in every_second_diffs:
@@ -492,33 +511,33 @@ class VideoDarkPixelAnalyzer:
                 td = r.get('time_difference_to_previous')
                 if td is not None and td >= 1.0:
                     time_diffs.append(td)
-            
+
             if not time_diffs or len(time_diffs) < 2:
                 print("Zu wenige Zeitdifferenzen vorhanden für doppelte Periode.")
                 return
-            
+
             # Berechne doppelte Perioden: (Zeit[0] + Zeit[1]), (Zeit[2] + Zeit[3]), ...
             double_periods = []
             for i in range(0, len(time_diffs) - 1, 2):
                 double_period = time_diffs[i] + time_diffs[i + 1]
                 double_periods.append(double_period)
-            
+
             if not double_periods:
                 print("Keine doppelten Perioden berechnet.")
                 return
-            
+
             # Ausreißer entfernen (optional)
             if remove_outliers and len(double_periods) > 2:
                 mean_val = np.mean(double_periods)
                 std_val = np.std(double_periods)
                 threshold = 2.0  # 2 Standardabweichungen
                 filtered_periods = [dp for dp in double_periods if abs(dp - mean_val) <= threshold * std_val]
-                
+
                 removed_count = len(double_periods) - len(filtered_periods)
                 if removed_count > 0:
                     print(f"Ausreißer entfernt (doppelte Perioden): {removed_count} Wert(e)")
                     double_periods = filtered_periods
-            
+
             # Formatiere und speichere Werte (gerundet auf 5 Dezimalstellen, Komma als Trennzeichen)
             lines = []
             for dp in double_periods:
@@ -550,22 +569,22 @@ class VideoDarkPixelAnalyzer:
         if not self.results:
             print("Keine dunklen Frames gefunden.")
             return
-            
+
         print(f"\n=== ANALYSE ZUSAMMENFASSUNG ===")
         print(f"Gefundene dunkle Frames: {len(self.results)}")
         print(f"Video Dauer: {self.duration:.2f} Sekunden")
-        
+
         # Sammle nur Frames mit time_difference_to_previous
         time_diffs = [r['time_difference_to_previous'] for r in self.results if 'time_difference_to_previous' in r]
-        
+
         if len(time_diffs) > 0:
             avg_interval = np.mean(time_diffs)
             print(f"Durchschnittliche Zeitdifferenz zwischen dunklen Frames: {avg_interval:.3f}s")
-            
+
             if len(time_diffs) > 1:
                 std_interval = np.std(time_diffs)
                 print(f"Standardabweichung der Zeitdifferenzen: {std_interval:.3f}s")
-        
+
         print(f"\nDetaillierte Zeitdifferenzen:")
         for i, result in enumerate(self.results):
             if 'time_difference_to_previous' in result:
@@ -573,7 +592,7 @@ class VideoDarkPixelAnalyzer:
                 print(f"Frame {i+1}: {result['time_seconds']:.3f}s (+{time_diff:.3f}s)")
             else:
                 print(f"Frame {i+1}: {result['time_seconds']:.3f}s (Start)")
-    
+
     def close(self):
         """
         Schließt die Video-Capture-Verbindung
@@ -599,7 +618,7 @@ def save_last_settings(settings, settings_file=None):
     """
     if settings_file is None:
         settings_file = Path(__file__).parent / '.last_settings.pkl'
-    
+
     try:
         with open(settings_file, 'wb') as f:
             pickle.dump(settings, f)
@@ -613,10 +632,10 @@ def load_last_settings(settings_file=None):
     """
     if settings_file is None:
         settings_file = Path(__file__).parent / '.last_settings.pkl'
-    
+
     if not settings_file.exists():
         return None
-    
+
     try:
         with open(settings_file, 'rb') as f:
             settings = pickle.load(f)
@@ -639,9 +658,9 @@ def main():
                         help='Interaktiv ein Video aus dem `Video`-Ordner auswählen')
     parser.add_argument('--recorded-fps', type=float, default=None,
                         help='(Optional) FPS, in der das Video aufgenommen wurde. Wird für Zeitberechnung verwendet.')
-    
+
     args = parser.parse_args()
-    
+
     # Ordner mit Beispiel-Videos (relativ zum Skript)
     video_dir = Path(__file__).parent / 'Video'
 
@@ -649,7 +668,7 @@ def main():
     last_settings = None
     if not args.video_path and not args.pick:
         last_settings = load_last_settings()
-    
+
     # Falls letzte Einstellungen vorhanden sind, frage ob sie verwendet werden sollen
     use_last_settings = False
     if last_settings:
@@ -661,7 +680,7 @@ def main():
         print(f"- Pendellänge: {last_settings.get('pendulum_length', 'keine Angabe')} m")
         print(f"- Hintergrund-Region: {last_settings.get('background_roi', 'N/A')}")
         print(f"- Dunkle Region: {last_settings.get('dark_roi', 'N/A')}")
-        
+
         try:
             choice = input("\nMöchten Sie diese Einstellungen verwenden? (j/n): ").strip().lower()
             if choice in ['j', 'ja', 'y', 'yes']:
@@ -683,13 +702,13 @@ def main():
             return
         for i, v in enumerate(vids):
             print(f"[{i}] {v.name}")
-        
+
         try:
             sel = input('\nWähle Index oder Dateiname: ').strip()
         except EOFError:
             print("Keine Eingabe möglich.")
             return
-        
+
         chosen = None
         if sel.isdigit():
             idx = int(sel)
@@ -701,7 +720,7 @@ def main():
                 if v.name == sel:
                     chosen = v
                     break
-        
+
         if chosen is None:
             print('Ungültige Auswahl.')
             return
@@ -715,26 +734,26 @@ def main():
         else:
             print(f"Fehler: Video-Datei '{args.video_path}' nicht gefunden.")
             return
-    
+
     print("=== VIDEO DARK PIXEL ANALYZER ===")
     print(f"Analysiere Video: {args.video_path}")
-    
+
     try:
         # Initialisiere Analyzer
         analyzer = VideoDarkPixelAnalyzer(args.video_path)
-        
+
         # Lese ersten Frame für Region-Auswahl
         first_frame = analyzer.get_frame(0)
         if first_frame is None:
             print("Fehler: Kann Video nicht lesen.")
             return
-        
+
         print(f"\nVideo-Information:")
         print(f"- FPS (Datei): {analyzer.fps}")
         print(f"- Frames: {analyzer.total_frames}")
         print(f"- Dauer: {analyzer.duration:.2f} Sekunden")
         print(f"- Auflösung: {analyzer.frame_width}x{analyzer.frame_height}")
-        
+
         # Frage nach der aufgenommenen FPS (falls nicht per CLI gesetzt)
         if args.recorded_fps is None:
             if use_last_settings and last_settings.get('recorded_fps'):
@@ -766,7 +785,7 @@ def main():
         print("AUSWAHL-MODUS:")
         print("[1] Region (ROI) - ganze rechteckige Bereiche")
         print("[2] Pixel - einzelne oder mehrere Pixel auswählen")
-        
+
         analysis_mode = "roi"  # Standard
         if use_last_settings and 'analysis_mode' in last_settings:
             analysis_mode = last_settings.get('analysis_mode', 'roi')
@@ -780,16 +799,16 @@ def main():
                     analysis_mode = "roi"
             except EOFError:
                 pass
-        
+
         print(f"Gewählter Modus: {analysis_mode.upper()}")
-        
+
         # Regionen/Pixel auswählen (oder aus letzten Einstellungen laden)
         print("\n" + "="*50)
         background_roi = None
         dark_roi = None
         background_pixels = None
         dark_pixels = None
-        
+
         if analysis_mode == "roi":
             if use_last_settings and last_settings.get('background_roi') and last_settings.get('dark_roi'):
                 background_roi = tuple(last_settings.get('background_roi'))
@@ -800,15 +819,15 @@ def main():
             else:
                 # Hintergrund-Region auswählen
                 background_roi = analyzer.select_region(first_frame, "Hintergrund-Region")
-                
+
                 # Dunkle Region auswählen
                 print("\n" + "="*50)
                 dark_roi = analyzer.select_region(first_frame, "dunkle Region")
-            
+
             print(f"\nAusgewählte Regionen:")
             print(f"- Hintergrund: {background_roi}")
             print(f"- Dunkle Region: {dark_roi}")
-        
+
         else:  # pixel mode
             if use_last_settings and last_settings.get('background_pixels') and last_settings.get('dark_pixels'):
                 background_pixels = last_settings.get('background_pixels')
@@ -819,29 +838,37 @@ def main():
             else:
                 # Hintergrund-Pixel auswählen
                 background_pixels = analyzer.select_pixels(first_frame, "Hintergrund-Pixel")
-                
+
                 # Dunkle Pixel auswählen
                 print("\n" + "="*50)
                 dark_pixels = analyzer.select_pixels(first_frame, "dunkle Region Pixel")
-            
+
             print(f"\nAusgewählte Pixel:")
             print(f"- Hintergrund: {len(background_pixels)} Pixel")
             print(f"- Dunkle Region: {len(dark_pixels)} Pixel")
-        
+
         print(f"- Intensitäts-Schwellenwert: {args.threshold}")
-        
+
         # Analyse durchführen
         print("\n" + "="*50)
+
+        # Erstelle Pfad für die Log-Datei der dunkelsten Pixel
+        out_dir = Path(__file__).parent / 'Ergebnisse'
+        out_dir.mkdir(parents=True, exist_ok=True)
+        base_name = Path(args.video_path).stem
+        darkest_pixel_log_path = out_dir / f"{base_name}_darkest_pixels.txt"
+
         analyzer.analyze_video(background_roi, dark_roi, args.threshold,
-                             background_pixels=background_pixels, dark_pixels=dark_pixels)
-        
+                             background_pixels=background_pixels, dark_pixels=dark_pixels,
+                             log_darkest_pixel_path=darkest_pixel_log_path)
+
         # Ergebnisse ausgeben
         analyzer.print_summary()
-        
+
         # Ergebnisse speichern
         analyzer.save_results(args.output)
         analyzer.save_double_period_differences()
-        
+
         # Speichere die verwendeten Einstellungen für nächstes Mal
         settings = {
             'video_path': str(args.video_path),
@@ -855,7 +882,7 @@ def main():
             'dark_pixels': dark_pixels
         }
         save_last_settings(settings)
-        
+
     except Exception as e:
         print(f"Fehler bei der Analyse: {e}")
         # Versuche, die Zeitdifferenzen trotz Fehler zu speichern, falls Ergebnisse vorhanden sind
