@@ -484,12 +484,11 @@ class VideoDarkPixelAnalyzer:
         except Exception as e:
             print(f"Fehler beim Speichern der zweiten Ergebnisse: {e}")
 
-    def save_double_period_differences(self, out_dir=None, remove_outliers=True):
+    def save_period_durations(self, out_dir=None, remove_outliers=True):
         """
-        Speichert die kumulierten Zeitdifferenzen zwischen alternierenden 'time_difference_to_previous' Werten.
-        Das heißt: Zeit(0) + Zeit(1), Zeit(2) + Zeit(3), etc.
-        Dies entspricht der doppelten Periode eines Pendels (volle Hin- und Rückbewegung).
-        Falls remove_outliers=True, werden Ausreißer entfernt (Werte > 2 Standardabweichungen vom Mittelwert).
+        Berechnet die Periodendauer durch Summierung von jeweils zwei aufeinanderfolgenden Zeitdifferenzen
+        (gleitendes Fenster). Das entspricht der Zeit vom ersten zum dritten dunklen Frame,
+        vom zweiten zum vierten, usw.
         """
         if not self.results:
             print("Keine Ergebnisse vorhanden, nichts zu speichern.")
@@ -503,54 +502,54 @@ class VideoDarkPixelAnalyzer:
             out_dir.mkdir(parents=True, exist_ok=True)
 
             base = Path(self.video_path).stem if self.video_path else 'video'
-            out_file = out_dir / f"{base}_double_period_differences.txt"
+            out_file = out_dir / f"{base}_period_durations.txt"
 
-            # Sammle time_difference_to_previous Werte (>= 1 Sekunde)
+            # Sammle time_difference_to_previous Werte (nur solche >= 0.5 Sekunden)
             time_diffs = []
             for r in self.results:
                 td = r.get('time_difference_to_previous')
-                if td is not None and td >= 1.0:
+                if td is not None and td >= 0.5:
                     time_diffs.append(td)
 
-            if not time_diffs or len(time_diffs) < 2:
-                print("Zu wenige Zeitdifferenzen vorhanden für doppelte Periode.")
+            if len(time_diffs) < 2:
+                print("Zu wenige Zeitdifferenzen vorhanden, um Periodendauern zu berechnen.")
                 return
 
-            # Berechne doppelte Perioden: (Zeit[0] + Zeit[1]), (Zeit[2] + Zeit[3]), ...
-            double_periods = []
-            for i in range(0, len(time_diffs) - 1, 2):
-                double_period = time_diffs[i] + time_diffs[i + 1]
-                double_periods.append(double_period)
+            # Berechne Periodendauern mit einem gleitenden Fenster
+            period_durations = []
+            for i in range(len(time_diffs) - 1):
+                period_duration = time_diffs[i] + time_diffs[i+1]
+                period_durations.append(period_duration)
 
-            if not double_periods:
-                print("Keine doppelten Perioden berechnet.")
+            if not period_durations:
+                print("Keine Periodendauern berechnet.")
                 return
 
             # Ausreißer entfernen (optional)
-            if remove_outliers and len(double_periods) > 2:
-                mean_val = np.mean(double_periods)
-                std_val = np.std(double_periods)
+            if remove_outliers and len(period_durations) > 2:
+                mean_val = np.mean(period_durations)
+                std_val = np.std(period_durations)
                 threshold = 2.0  # 2 Standardabweichungen
-                filtered_periods = [dp for dp in double_periods if abs(dp - mean_val) <= threshold * std_val]
+                filtered_periods = [p for p in period_durations if abs(p - mean_val) <= threshold * std_val]
 
-                removed_count = len(double_periods) - len(filtered_periods)
+                removed_count = len(period_durations) - len(filtered_periods)
                 if removed_count > 0:
-                    print(f"Ausreißer entfernt (doppelte Perioden): {removed_count} Wert(e)")
-                    double_periods = filtered_periods
+                    print(f"Ausreißer bei Periodendauern entfernt: {removed_count} Wert(e)")
+                    period_durations = filtered_periods
 
             # Formatiere und speichere Werte (gerundet auf 5 Dezimalstellen, Komma als Trennzeichen)
             lines = []
-            for dp in double_periods:
-                rounded_dp = round(dp, 5)
-                formatted_dp = str(rounded_dp).replace('.', ',')
-                lines.append(f"{formatted_dp}\n")
+            for p in period_durations:
+                rounded_p = round(p, 5)
+                formatted_p = str(rounded_p).replace('.', ',')
+                lines.append(f"{formatted_p}\n")
 
             with open(out_file, 'w', encoding='utf-8') as f:
                 f.writelines(lines)
 
-            print(f"Doppelte Perioden gespeichert in: {out_file} ({len(lines)} Einträge)")
+            print(f"Periodendauern gespeichert in: {out_file} ({len(lines)} Einträge)")
         except Exception as e:
-            print(f"Fehler beim Speichern der doppelten Perioden: {e}")
+            print(f"Fehler beim Speichern der Periodendauern: {e}")
 
     def calculate_gravity(self, pendulum_length, half_period):
         """
@@ -867,7 +866,7 @@ def main():
 
         # Ergebnisse speichern
         analyzer.save_results(args.output)
-        analyzer.save_double_period_differences()
+        analyzer.save_period_durations()
 
         # Speichere die verwendeten Einstellungen für nächstes Mal
         settings = {
@@ -888,7 +887,7 @@ def main():
         # Versuche, die Zeitdifferenzen trotz Fehler zu speichern, falls Ergebnisse vorhanden sind
         if 'analyzer' in locals() and analyzer.results:
             try:
-                analyzer.save_double_period_differences()
+                analyzer.save_period_durations()
             except Exception as save_err:
                 print(f"Fehler beim Speichern der Ergebnisse: {save_err}")
     finally:
